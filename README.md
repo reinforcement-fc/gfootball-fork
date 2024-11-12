@@ -1,7 +1,13 @@
-# Google Research Football with Depp Goal 13
+# Google Research Football with Deep Goal 13
+
+* **Leon Lusbo** 24666380
+* **Choonsik Cho** – 24585388
+* **Sotero Jr Saberon** – 24706727
 
 This repository contains an RL environment based on open-source game Gameplay
 Football. <br> It was created by the Google Brain team for research purposes.
+
+
 
 Useful links:
 
