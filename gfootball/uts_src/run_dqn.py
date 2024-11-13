@@ -49,10 +49,10 @@ flags.DEFINE_integer('train_freq', 4, 'Frequency of training steps.')
 flags.DEFINE_integer('learning_starts', 1000, 'Steps before training starts.')
 flags.DEFINE_integer('target_network_update_freq', 500, 'Frequency to update the target network.')
 flags.DEFINE_integer('num_envs', 8, 'Number of environments to run in parallel.')
-flags.DEFINE_integer('save_interval', 20_000, 'Save model every this many steps.')
+flags.DEFINE_integer('save_interval', 300_000, 'Save model every this many steps.')
 flags.DEFINE_bool('dump_scores', False, 'Dump Scores'),
 flags.DEFINE_string('save_path', model_dir, 'Path to save the model checkpoints.')
-flags.DEFINE_bool('render', False, 'Enable rendering.')
+flags.DEFINE_bool('render', True, 'Enable rendering.')
 
 def print_flags():
     print("Starting with the following flag values:")
@@ -71,8 +71,8 @@ def create_single_football_env(iprocess = 0):
     env = monitor.Monitor(env, logger.get_dir() and os.path.join(logger.get_dir(), str(iprocess)), allow_early_resets=True)
     
     # Set up manual video recording
-    if iprocess == 0:
-        env = VideoCaptureWrapper(env, video_dir=video_dir, record_frequency=50)
+    #if iprocess == 0:
+    env = VideoCaptureWrapper(env, video_dir=video_dir, record_frequency=50)
 
     return env
 
