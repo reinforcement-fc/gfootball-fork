@@ -22,6 +22,8 @@ def monitor_training_job(training_job_name, poll_interval=60):
         
         # 현재 상태 출력
         print(f"Status: {training_status}, Secondary Status: {secondary_status}")
+        #from pprint import pprint
+        #pprint(response)
         
         # 작업이 완료되거나 실패한 경우
         if training_status == 'Completed':

@@ -32,6 +32,7 @@ def training_job(wait):
         image_uri=docker_image_uri,
         role="arn:aws:iam::443142193439:role/Sagemaker_reinforcementLearning-43008-iac",
         instance_count=1,
+        max_run=86400*3,
         instance_type=instance_type,
         sagemaker_session=sagemaker_session,
         source_dir="/home/sagemaker-user/gfootball-fork/gfootball/uts_src",
